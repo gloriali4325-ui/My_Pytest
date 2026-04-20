@@ -1,0 +1,51 @@
+[
+  {
+    "method": "POST",
+    "path": "/login",
+
+    "request_fields": {
+      "username": "string",
+      "password": "string"
+    },
+
+    "response_fields": {
+      "token": "string"
+    },
+
+    "success_rules": {
+      "required_fields": [
+        "username",
+        "password"
+      ],
+
+      "min_length": {
+        "username": 3,
+        "password": 6
+      }
+    }
+  },
+
+  {
+  "method": "POST",
+  "path": "/register",
+  "request_fields": {
+    "email": "string",
+    "password": "string"
+  },
+  "response_fields": {
+    "user_id": "int"
+  },
+  "success_rules": {
+    "required_fields": [
+      "email",
+      "password"
+    ],
+    "min_length": {
+      "password": 6
+    },
+    "contains": {
+      "email": "@"
+    }
+  }
+}
+]
